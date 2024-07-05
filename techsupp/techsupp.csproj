@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBFF149C-DB9A-4FA0-9FC9-F17A53702035}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>techsupp</RootNamespace>
+    <AssemblyName>techsupp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v16.1, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Core, Version=16.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Vistas\Appsoporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Appsoporte.Designer.cs">
+      <DependentUpon>Appsoporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Busqueda_Avanzada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Busqueda_Avanzada.Designer.cs">
+      <DependentUpon>Busqueda_Avanzada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Datos.cs" />
+    <Compile Include="DSA.cs">
+      <DependentUpon>DSA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Editar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Editar_Usuario.Designer.cs">
+      <DependentUpon>Editar_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Vistas\Editar_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Editar_Ticket.Designer.cs">
+      <DependentUpon>Editar_Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login_Editar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login_Editar_Usuario.Designer.cs">
+      <DependentUpon>Login_Editar_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login_Nuevo_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login_Nuevo_Usuario.Designer.cs">
+      <DependentUpon>Login_Nuevo_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Nuevo_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Nuevo_Usuario.Designer.cs">
+      <DependentUpon>Nuevo_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\Reset_Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Reset_Pass.Designer.cs">
+      <DependentUpon>Reset_Pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Crear_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Crear_Ticket.Designer.cs">
+      <DependentUpon>Crear_Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Tickets.cs" />
+    <Compile Include="Datos\Usuario.cs" />
+    <Compile Include="Vistas\Ver_Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ver_Tickets.Designer.cs">
+      <DependentUpon>Ver_Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Ver_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ver_Usuarios.Designer.cs">
+      <DependentUpon>Ver_Usuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vistas\Appsoporte.resx">
+      <DependentUpon>Appsoporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Busqueda_Avanzada.resx">
+      <DependentUpon>Busqueda_Avanzada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Editar_Usuario.resx">
+      <DependentUpon>Editar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Editar_Ticket.resx">
+      <DependentUpon>Editar_Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login_Editar_Usuario.resx">
+      <DependentUpon>Login_Editar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login_Nuevo_Usuario.resx">
+      <DependentUpon>Login_Nuevo_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Nuevo_Usuario.resx">
+      <DependentUpon>Nuevo_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Vistas\Reset_Pass.resx">
+      <DependentUpon>Reset_Pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Crear_Ticket.resx">
+      <DependentUpon>Crear_Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Ver_Tickets.resx">
+      <DependentUpon>Ver_Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Ver_Usuarios.resx">
+      <DependentUpon>Ver_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DSA.xsc">
+      <DependentUpon>DSA.xsd</DependentUpon>
+    </None>
+    <None Include="DSA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSA.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSA.xss">
+      <DependentUpon>DSA.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1462920575_user_male2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1462920647_user_male2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditDocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditDocument1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1463172925_document-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditDocument2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1463173843_stock_new-document-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1463173843_stock_new-document-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1463176081_New_document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1463176324_document_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1463359991_button_blue_repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar-buscar_318-11408.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo-documento-icono-9161-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agt-actualizacion-del-producto-icono-5749-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folders-OS-Exit-Full-Screen-Metro-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folders-OS-Exit-Full-Screen-Metro-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-file-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-contact-new-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\politica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1478586466_filter_delete.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

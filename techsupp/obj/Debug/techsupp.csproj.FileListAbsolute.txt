@@ -1,0 +1,291 @@
+G:\Ejercicios de c sharp\techsupp\techsupp\bin\Debug\techsupp.exe.config
+G:\Ejercicios de c sharp\techsupp\techsupp\bin\Debug\techsupp.exe
+G:\Ejercicios de c sharp\techsupp\techsupp\bin\Debug\techsupp.pdb
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.login.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.exe
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.pdb
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+G:\Ejercicios de c sharp\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.exe
+D:\techsupp\techsupp\obj\Debug\techsupp.pdb
+D:\techsupp\techsupp\bin\Debug\techsupp.exe
+D:\techsupp\techsupp\bin\Debug\techsupp.pdb
+D:\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.login.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+D:\techsupp\techsupp\obj\Debug\techsupp.Resetpass.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+D:\ALL DATA\techsupp\techsupp\bin\Debug\techsupp.exe.config
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.exe
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.pdb
+D:\ALL DATA\techsupp\techsupp\bin\Debug\techsupp.exe
+D:\ALL DATA\techsupp\techsupp\bin\Debug\techsupp.pdb
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.login.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Resetpass.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+D:\ALL DATA\techsupp\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+D:\techsupp\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+D:\techsupp\techsupp\bin\Debug\techsupp.exe.config
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.exe.config
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.exe
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.pdb
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.exe
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.pdb
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.login.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Resetpass.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+D:\Users\ryzer\Downloads\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Login_Truncate.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.exe.config
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.exe
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.pdb
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.exe
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.pdb
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Login_Truncate.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.login.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Resetpass.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+M:\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.exe.config
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.exe
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.pdb
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.exe
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\bin\Debug\techsupp.pdb
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Login_Truncate.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.login.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Resetpass.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+C:\Users\Administrator\Desktop\ff\techsupp-20160905T204928Z\techsupp-20160905T204928Z\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+M:\techsupp\techsupp\bin\Debug\techsupp.exe.config
+M:\techsupp\techsupp\obj\Debug\techsupp.exe
+M:\techsupp\techsupp\obj\Debug\techsupp.pdb
+M:\techsupp\techsupp\bin\Debug\techsupp.exe
+M:\techsupp\techsupp\bin\Debug\techsupp.pdb
+M:\techsupp\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+M:\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Login_Truncate.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.login.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Resetpass.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+M:\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+D:\Users\ryzer\Desktop\techsupp\techsupp\bin\Debug\techsupp.exe.config
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.exe
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.pdb
+D:\Users\ryzer\Desktop\techsupp\techsupp\bin\Debug\techsupp.exe
+D:\Users\ryzer\Desktop\techsupp\techsupp\bin\Debug\techsupp.pdb
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.appsoporte.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Login_Truncate.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.login.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Resetpass.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Ticket.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.Ver.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+D:\Users\ryzer\Desktop\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+M:\techsupp act\techsupp\bin\Debug\techsupp.exe.config
+M:\techsupp act\techsupp\obj\Debug\techsupp.exe
+M:\techsupp act\techsupp\obj\Debug\techsupp.pdb
+M:\techsupp act\techsupp\bin\Debug\techsupp.exe
+M:\techsupp act\techsupp\bin\Debug\techsupp.pdb
+M:\techsupp act\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+M:\techsupp act\techsupp\obj\Debug\techsupp.appsoporte.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Login_Truncate.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.login.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Resetpass.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Ticket.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.Ver.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+M:\techsupp act\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.exe
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.pdb
+M:\New folder (2)\techsupp act\techsupp\bin\Debug\techsupp.exe
+M:\New folder (2)\techsupp act\techsupp\bin\Debug\techsupp.pdb
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.csprojResolveAssemblyReference.cache
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.appsoporte.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Cambiar_pass.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Editar_TicketE.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Login_Truncate.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.login.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.LoginEditarUsuario.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.LoginNuevoUsuario.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Nuevo_TicketE.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Resetpass.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Ticket.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.Ver.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.VerUsuarios.resources
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.csproj.GenerateResource.Cache
+M:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.exe.licenses
+H:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.exe
+H:\New folder (2)\techsupp act\techsupp\obj\Debug\techsupp.pdb
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.csproj.AssemblyReference.cache
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.csproj.SuggestedBindingRedirects.cache
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.appsoporte.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Busqueda_avanzada.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Editar_ticket.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.login.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Nuevo_usuario.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.exe.licenses
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.exe
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.pdb
+C:\Users\dell\Desktop\techsupp act\techsupp\bin\Debug\techsupp.exe.config
+C:\Users\dell\Desktop\techsupp act\techsupp\bin\Debug\techsupp.exe
+C:\Users\dell\Desktop\techsupp act\techsupp\bin\Debug\techsupp.pdb
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Editar_Usuario.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Login_Editar_Usuario.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Login_Nuevo_Usuario.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Reset_Pass.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Crear_Ticket.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Ver_Tickets.resources
+C:\Users\dell\Desktop\techsupp act\techsupp\obj\Debug\techsupp.Ver_Usuarios.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\bin\Debug\techsupp.exe.config
+C:\Users\dell\Desktop\AppSoporte\techsupp\bin\Debug\techsupp.exe
+C:\Users\dell\Desktop\AppSoporte\techsupp\bin\Debug\techsupp.pdb
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.csproj.AssemblyReference.cache
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.csproj.SuggestedBindingRedirects.cache
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Appsoporte.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Busqueda_Avanzada.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Editar_Usuario.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Editar_Ticket.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Login.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Login_Editar_Usuario.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Login_Nuevo_Usuario.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Nuevo_Usuario.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Reset_Pass.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Crear_Ticket.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Ver_Tickets.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.Ver_Usuarios.resources
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.exe.licenses
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.exe
+C:\Users\dell\Desktop\AppSoporte\techsupp\obj\Debug\techsupp.pdb
+C:\Users\dell\Desktop\techsupp\techsupp\bin\Debug\techsupp.exe.config
+C:\Users\dell\Desktop\techsupp\techsupp\bin\Debug\techsupp.exe
+C:\Users\dell\Desktop\techsupp\techsupp\bin\Debug\techsupp.pdb
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.csproj.AssemblyReference.cache
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.csproj.SuggestedBindingRedirects.cache
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Appsoporte.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Busqueda_Avanzada.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Editar_Usuario.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Editar_Ticket.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Login.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Login_Editar_Usuario.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Login_Nuevo_Usuario.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Nuevo_Usuario.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Reset_Pass.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Crear_Ticket.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Ver_Tickets.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.Ver_Usuarios.resources
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.exe.licenses
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.exe
+C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.pdb
