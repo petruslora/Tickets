@@ -14,7 +14,7 @@ namespace techsupp
 {
     public class Conexion
     {
-        public SqlDataReader Reader;
+        public SqlDataReader Reader { get; set; }
         public SqlConnection BaseDeDatos { get; set; }
         public SqlCommand Comando { get; set; }
         public string Query { get; set; }

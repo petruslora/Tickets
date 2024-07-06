@@ -19,7 +19,7 @@ namespace techsupp
             bool valido = false;
             Query = @"SELECT NombreUsuario, Contraseña from dbo.Tab_Usuarios 
                                  where NombreUsuario='" + user + "' and PWDCOMPARE('" + password + "', Contraseña) = 1";
-            Comando = new SqlCommand(Query, AbrirBD());  // ejecuta el query
+            Comando = new SqlCommand(Query, AbrirBD());
 
             Reader = Comando.ExecuteReader();  // asigna el resultado del select del command al reader
             if (Reader.HasRows == true)  // si el reader tiene valor de el select anterior el estatus es valido(true)

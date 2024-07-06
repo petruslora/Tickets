@@ -154,7 +154,6 @@
             this.holaToolStripMenuItem.Name = "holaToolStripMenuItem";
             this.holaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.holaToolStripMenuItem.Text = "DSA";
-            this.holaToolStripMenuItem.Click += new System.EventHandler(this.holaToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem1
             // 
@@ -356,7 +355,6 @@
             this.datagv1.Size = new System.Drawing.Size(1237, 372);
             this.datagv1.TabIndex = 38;
             this.datagv1.TabStop = false;
-            this.datagv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagv1_CellContentClick);
             this.datagv1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.datagv1_MouseClick_1);
             this.datagv1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.datagv1_MouseDoubleClick);
             // 
@@ -513,15 +511,6 @@
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_quitar_filtro;
         public System.Windows.Forms.DataGridView datagv1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkB_Pendiente;
         private System.Windows.Forms.BindingSource reportesBindingSource;

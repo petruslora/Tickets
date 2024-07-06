@@ -13,13 +13,10 @@ namespace techsupp
 {
     public partial class Appsoporte : Form
     {
-        // Atributos de la clase "appsoporte"
         private string UsuarioActual;
         private Datos datos = new Datos();
-        private SqlCommand Comando = new SqlCommand();
         private int Codigo;
         private string Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario;
-        private SqlDataReader Reader;
         Usuario usuario = new Usuario();
 
         public Appsoporte(string usuarioActual)
@@ -52,7 +49,6 @@ namespace techsupp
         public void Ticket_FormClosed(object sender, FormClosedEventArgs e)
         {
             //Cuando el formulario "Ticket" se cierre se ejecutara este codigo....
-            //Metodo que es como si le daria click al boton buscar...
             ActualizarThisDataGrid();
         }
         private void btn_Actualizar_Click(object sender, EventArgs e)
@@ -273,11 +269,11 @@ namespace techsupp
         public void GetNombreDelUsuario() // Muestra el usuario que inicio sesion...
         {
             datos.Query = "EXEC select_nombreCompletoUsuario '" + this.UsuarioActual + "';";
-            Comando = new SqlCommand(datos.Query, datos.AbrirBD());
-            Reader = Comando.ExecuteReader();
-            if (Reader.Read())
+            datos.Comando = new SqlCommand(datos.Query, datos.AbrirBD());
+            datos.Reader = datos.Comando.ExecuteReader();
+            if (datos.Reader.Read())
             {
-                this.lbl_usuarioactual.Text = (Reader["NombreCompleto"].ToString());
+                this.lbl_usuarioactual.Text = (datos.Reader["NombreCompleto"].ToString());
             }
             datos.CerrarBD();
         }

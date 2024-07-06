@@ -98,7 +98,7 @@
             this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox1.Location = new System.Drawing.Point(17, 80);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(495, 619);
+            this.GroupBox1.Size = new System.Drawing.Size(495, 484);
             this.GroupBox1.TabIndex = 19;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Actualizar ticket";
@@ -133,32 +133,20 @@
             "Planes y estrategias",
             "Juridica",
             "Omega",
-            "Transporte de Drogas",
             "Transportacion",
             "DIO",
             "Central",
             "Correspondencia",
             "Despacho",
-            "Escolta",
-            "Fichas",
-            "Poligrafo",
             "Archivo Central",
-            "Armas",
             "Archivo Criminologico",
-            "Casa de Gualdia",
-            "Asuntos Internos",
             "CICC",
-            "Sub direccion CICC",
             "DIMI",
             "Recursos Humanos",
-            "Investigaciones",
             "CDI",
             "URT",
             "URTI",
             "Operaciones",
-            "Equipo",
-            "Reaccion a Denuncias",
-            "Recepcion de Denuncias",
             "Libre acceso a la Informacion",
             "Suministro",
             "Planta",
@@ -170,11 +158,8 @@
             "Financiera",
             "DTCN",
             "Contraloria",
-            "Armas",
             "Personal",
-            "AILA",
-            "Muelle Caucedo",
-            "Muelle Haina"});
+            "AILA"});
             this.tb_Departamento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tb_Departamento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tb_Departamento.Location = new System.Drawing.Point(121, 173);
@@ -374,7 +359,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_salir;
-            this.ClientSize = new System.Drawing.Size(532, 713);
+            this.ClientSize = new System.Drawing.Size(532, 679);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_editar);
             this.Controls.Add(this.GroupBox1);

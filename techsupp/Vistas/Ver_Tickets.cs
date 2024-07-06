@@ -14,7 +14,7 @@ namespace techsupp
     {
         //Atributos...
         int codigoTicket;
-        private string Fecha, Tecnico, Estado, Departameto, ProblemasCon, No_af,  Comentario;
+        private string Fecha, Tecnico, Estado, Departameto, ProblemasCon, No_af, Comentario;
         public Ver_Tickets(int ticket, string fecha, string tecnico, string estado, string departameto,  string problemascon, string no_af, string comentario)
         {
             InitializeComponent();

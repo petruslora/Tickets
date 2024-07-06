@@ -14,17 +14,16 @@ namespace techsupp
     {
         Usuario usuario = new Usuario();    
         private string ActiveUser;
-        private Datos manipularDatos = new Datos();
-        Tickets tickets = new Tickets();  
+        private Datos manipularDatos = new Datos(); 
         private Boolean Admin;
         private string Codigo, Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario;
-        public Busqueda_Avanzada(string date1, string date2,CheckBox incluirfecha, CheckBox pendiente, string categoria, string tb_buscar)
+        public Busqueda_Avanzada(string date1, string date2,CheckBox incluirFecha, CheckBox pendiente, string categoria, string tb_buscar)
         {
             InitializeComponent();
             this.dateTimePicker1.Text = date1;
             this.dateTimePicker2.Text = date2;
             this.checkB_Pendiente.Checked = pendiente.Checked;
-            this.checkB_incluirfecha.Checked = incluirfecha.Checked;
+            this.checkB_incluirfecha.Checked = incluirFecha.Checked;
             this.cb_categoria.Text = categoria;
             this.tb_Buscar.Text = tb_buscar; 
         }
@@ -103,22 +102,10 @@ namespace techsupp
             int i = Convert.ToInt32(this.datagv1.SelectedRows.Count);
             this.label3.Text = i.ToString() + " Seleccionadas";
         }
-
-        private void holaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void crearTicketToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CrearTicket();
         }
-
-        private void datagv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void datagv1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             VerTicket();

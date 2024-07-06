@@ -21,7 +21,6 @@ namespace techsupp
         public string Comentario { get; set; }
         public Tickets()
         {
-            
         }
         public Tickets(int codigoTicket)
         {
@@ -85,10 +84,11 @@ namespace techsupp
                     CerrarBD();
                     if (FilasAfectadas > 0)
                     {
-                        if (MessageBox.Show("El Ticket número " + Codigo + ", ha sido actualizado satisfactoriamente.", "Actualizacion realizada", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.OK) ;
-                        //this.Close();
-                        else
-                            MessageBox.Show("Ha Ocurrido un error");
+                        MessageBox.Show("El Ticket número " + Codigo + ", ha sido actualizado satisfactoriamente.", "Actualizacion realizada", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    }
+                    else
+                    { 
+                        MessageBox.Show("Ha Ocurrido un error");
                     }
                 }
                 catch (Exception)

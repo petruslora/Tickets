@@ -71,6 +71,7 @@ namespace techsupp
             else
             {
                new Tickets(tickets.Codigo, tickets.Tecnico, this.cb_Estado.Text, this.tb_Departamento.Text, this.cb_Problemascon.Text, this.tb_noaf.Text, this.tb_comentario.Text).EditarTicket();
+                this.Close();
             }
         }
     }

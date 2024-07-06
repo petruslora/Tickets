@@ -13,7 +13,6 @@ namespace techsupp
 {
     public partial class Editar_Usuario : Form
     {
-        private string Usuario;
         public Editar_Usuario()
         {
             InitializeComponent();

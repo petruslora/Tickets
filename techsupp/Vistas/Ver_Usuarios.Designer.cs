@@ -32,19 +32,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DATAGRID = new System.Windows.Forms.DataGridView();
-            this.dSA = new techsupp.DSA();
-            this.tab_UsuariosTableAdapter = new techsupp.DSATableAdapters.Tab_UsuariosTableAdapter();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dSA = new techsupp.DSA();
+            this.tab_UsuariosTableAdapter = new techsupp.DSATableAdapters.Tab_UsuariosTableAdapter();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DATAGRID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // DATAGRID
@@ -82,25 +82,6 @@
             this.DATAGRID.Size = new System.Drawing.Size(797, 301);
             this.DATAGRID.TabIndex = 0;
             // 
-            // dSA
-            // 
-            this.dSA.DataSetName = "DSA";
-            this.dSA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tab_UsuariosTableAdapter
-            // 
-            this.tab_UsuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataMember = "Tab_Usuarios";
-            this.bindingSource2.DataSource = this.dSA;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Tab_Usuarios";
-            this.bindingSource1.DataSource = this.dSA;
-            // 
             // IdUsuario
             // 
             this.IdUsuario.DataPropertyName = "IdUsuario";
@@ -135,6 +116,25 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 150;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Tab_Usuarios";
+            this.bindingSource1.DataSource = this.dSA;
+            // 
+            // dSA
+            // 
+            this.dSA.DataSetName = "DSA";
+            this.dSA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tab_UsuariosTableAdapter
+            // 
+            this.tab_UsuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataMember = "Tab_Usuarios";
+            this.bindingSource2.DataSource = this.dSA;
+            // 
             // Ver_Usuarios
             // 
             this.ClientSize = new System.Drawing.Size(793, 355);
@@ -142,9 +142,9 @@
             this.Name = "Ver_Usuarios";
             this.Load += new System.EventHandler(this.Ver_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DATAGRID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
