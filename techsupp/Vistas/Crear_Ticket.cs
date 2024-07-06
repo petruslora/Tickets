@@ -14,6 +14,7 @@ namespace techsupp
     public partial class Crear_Ticket : Form
     {
         Datos datos = new Datos();
+        int CodigoTicket;
 
         public Crear_Ticket(string usuario) // Sobrecarga del constructor...
         {
@@ -32,7 +33,8 @@ namespace techsupp
                 MessageBox.Show("Por favor llene el formulario correctamente, los campos marcados con * son obligatorios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                new Tickets().CrearTicket(this.tb_Tecnico.Text, this.cb_Estado.Text, this.tb_Departamento.Text, this.cb_Problemascon.Text, this.tb_af.Text, this.tb_descripcion.Text);
+                CodigoTicket = datos.GetCodigoTicket();
+                new Tickets(CodigoTicket, this.tb_Tecnico.Text, this.cb_Estado.Text, this.tb_Departamento.Text, this.cb_Problemascon.Text, this.tb_af.Text, this.tb_descripcion.Text).CrearTicket();
                 LimpiarCampos();
                 this.Close();
             }

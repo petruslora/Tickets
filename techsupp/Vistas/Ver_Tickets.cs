@@ -13,11 +13,12 @@ namespace techsupp
     public partial class Ver_Tickets : Form
     {
         //Atributos...
-        private string Ticket, Fecha, Tecnico, Estado, Departameto, ProblemasCon, No_af,  Comentario;
-        public Ver_Tickets(string ticket, string fecha, string tecnico, string estado, string departameto,  string problemascon, string no_af, string comentario)
+        int codigoTicket;
+        private string Fecha, Tecnico, Estado, Departameto, ProblemasCon, No_af,  Comentario;
+        public Ver_Tickets(int ticket, string fecha, string tecnico, string estado, string departameto,  string problemascon, string no_af, string comentario)
         {
             InitializeComponent();
-            this.Ticket = ticket;
+            this.codigoTicket = ticket;
             this.Fecha = fecha;
             this.Tecnico = tecnico;
             this.Estado = estado;
@@ -28,7 +29,7 @@ namespace techsupp
         }
         private void Ver_Load(object sender, EventArgs e)
         {
-            this.lbl_Ticket.Text = this.Ticket;
+            this.lbl_Ticket.Text = this.codigoTicket.ToString();
             this.lbl_rFecha.Text = this.Fecha;
             this.lbl_rTecnico.Text = this.Tecnico;
             this.lbl_rEstado.Text = this.Estado;

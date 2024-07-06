@@ -14,31 +14,33 @@ namespace techsupp
     public partial class Editar_Ticket : Form
     {
         // Atributos...
-        private string Ticket, Fecha, Tecnico, Estado, Departamento, ProblemasCon, NoAF, Comentario;
         Tickets tickets = new Tickets();
+        Datos datos = new Datos();
+        int codigoTicket;
 
-        public Editar_Ticket(string ticket, string fecha, string tecnico, string estado, string departameto, string problemascon, string noaf, string comentario)
+        public Editar_Ticket(int ticket, string fecha, string tecnico, string estado, string departameto, string problemascon, string noaf, string comentario)
         {
-            this.Ticket = ticket;
-            this.Fecha = fecha;
-            this.Tecnico = tecnico;
-            this.Estado = estado;
-            this.Departamento = departameto;
-            this.ProblemasCon = problemascon;
-            this.NoAF = noaf;
-            this.Comentario = comentario;
+            
+            tickets.Codigo = ticket;
+            tickets.Fecha = fecha;
+            tickets.Tecnico = tecnico;
+            tickets.Estado = estado;
+            tickets.Departamento = departameto;
+            tickets.ProblemasCon = problemascon;
+            tickets.NumeroActivoFijo = noaf;
+            tickets.Comentario = comentario;
             InitializeComponent();
         }
         private void Editar_ticket_Load(object sender, EventArgs e)
         {
-            this.lbl_Ticket.Text = this.Ticket.ToString();
-            this.lbl_date.Text = this.Fecha.ToString();
-            this.tb_Tecnico.Text = this.Tecnico;
-            this.cb_Estado.Text = this.Estado;
-            this.tb_Departamento.Text = this.Departamento;
-            this.cb_Problemascon.Text = this.ProblemasCon;
-            this.tb_noaf.Text = this.NoAF;
-            this.tb_comentario.Text = this.Comentario;          
+            this.lbl_Ticket.Text = tickets.Codigo.ToString();
+            this.lbl_date.Text = tickets.Fecha.ToString();
+            this.tb_Tecnico.Text = tickets.Tecnico;
+            this.cb_Estado.Text = tickets.Estado;
+            this.tb_Departamento.Text = tickets.Departamento;
+            this.cb_Problemascon.Text = tickets.ProblemasCon;
+            this.tb_noaf.Text = tickets.NumeroActivoFijo;
+            this.tb_comentario.Text = tickets.Comentario;          
         }
         private void btn_salir_Click(object sender, EventArgs e)
         {
@@ -68,7 +70,7 @@ namespace techsupp
             }
             else
             {
-                tickets.EditarTicket(this.Ticket, this.Tecnico, this.cb_Estado.Text, this.tb_Departamento.Text, this.cb_Problemascon.Text, this.tb_noaf.Text, this.tb_comentario.Text);
+               new Tickets(tickets.Codigo, tickets.Tecnico, this.cb_Estado.Text, this.tb_Departamento.Text, this.cb_Problemascon.Text, this.tb_noaf.Text, this.tb_comentario.Text).EditarTicket();
             }
         }
     }

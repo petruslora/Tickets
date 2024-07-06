@@ -17,7 +17,8 @@ namespace techsupp
         private string UsuarioActual;
         private Datos datos = new Datos();
         private SqlCommand Comando = new SqlCommand();
-        private string Codigo, Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario;
+        private int Codigo;
+        private string Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario;
         private SqlDataReader Reader;
         Usuario usuario = new Usuario();
 
@@ -220,7 +221,7 @@ namespace techsupp
         {
             try
             {
-                Codigo = this.datagv1.CurrentRow.Cells[0].Value.ToString();
+                Codigo = Convert.ToInt32(this.datagv1.CurrentRow.Cells[0].Value.ToString());
                 Fecha = this.datagv1.CurrentRow.Cells[1].Value.ToString();
                 Tecnico = this.datagv1.CurrentRow.Cells[2].Value.ToString();
                 Estado = this.datagv1.CurrentRow.Cells[3].Value.ToString();
@@ -240,7 +241,7 @@ namespace techsupp
         {
             try
             {
-                Codigo = this.datagv1.CurrentRow.Cells[0].Value.ToString();
+                Codigo = Convert.ToInt32(this.datagv1.CurrentRow.Cells[0].Value);
                 Fecha = this.datagv1.CurrentRow.Cells[1].Value.ToString();
                 Tecnico = this.datagv1.CurrentRow.Cells[2].Value.ToString();
                 Estado = this.datagv1.CurrentRow.Cells[3].Value.ToString();
@@ -263,7 +264,7 @@ namespace techsupp
         {
             if (UsuarioActual == this.datagv1.CurrentRow.Cells[2].Value.ToString())
             { 
-                new Tickets().EliminarTicket(Convert.ToInt32(this.datagv1.CurrentRow.Cells[0].Value));
+                new Tickets(Convert.ToInt32(this.datagv1.CurrentRow.Cells[0].Value)).EliminarTicket();
                 ActualizarThisDataGrid();
             }
             else
@@ -271,8 +272,8 @@ namespace techsupp
         }
         public void GetNombreDelUsuario() // Muestra el usuario que inicio sesion...
         {
-            string query = "EXEC select_nombreCompletoUsuario '" + this.UsuarioActual + "';";
-            Comando = new SqlCommand(query, datos.AbrirBD());
+            datos.Query = "EXEC select_nombreCompletoUsuario '" + this.UsuarioActual + "';";
+            Comando = new SqlCommand(datos.Query, datos.AbrirBD());
             Reader = Comando.ExecuteReader();
             if (Reader.Read())
             {

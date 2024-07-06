@@ -46,7 +46,7 @@ namespace techsupp
         {
             if (tb_nuevapass.Text == tb_nuevapassconf.Text) // Evalua si la contraseña nueva es valida...
             { 
-                EvaluaPassword();
+                CambiarElPassword();
             }
             else
             {
@@ -74,21 +74,14 @@ namespace techsupp
             btn_cambiar.Hide();
             this.label7.Hide();
         }
-        public void EvaluaPassword()
+        public void CambiarElPassword()
         {
             if (tb_nuevapass.TextLength >= 6) //Evalua si la contraseña nueva es valida...
                 {
-                    Conexion conexion = new Conexion();
-                    string query = @"exec editar_Contraseña @NombreUsuario, @Contraseña; ";
+                Usuario usuario = new Usuario();
+                int cantidadDeFilasAfectadas = usuario.EditarUsuario(this.tb_user.Text, this.tb_nuevapass.Text);
 
-                    SqlCommand comando = new SqlCommand(query, conexion.AbrirBD());
-                    // Parametros para la query...
-                    comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar).Value = tb_user.Text;
-                    comando.Parameters.Add("@Contraseña", SqlDbType.VarChar).Value = tb_nuevapass.Text;
-
-                    int cant = comando.ExecuteNonQuery();
-                    conexion.CerrarBD();
-                    if (cant == 1) // Evalua si hubieron filas afectadas...
+                    if (cantidadDeFilasAfectadas == 1) // Evalua si hubieron filas afectadas...
                         {
                             MessageBox.Show("La contraseña se cambio correctamente");
                             tb_user.Clear();

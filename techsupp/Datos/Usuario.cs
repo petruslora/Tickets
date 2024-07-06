@@ -32,8 +32,8 @@ namespace techsupp
         public Boolean TipoDeUsuario(string usuario)
         {
             Boolean admin = false;
-            string query = "SELECT TipoUsuario FROM dbo.Tab_Usuarios where NombreUsuario = '" + usuario + "';";
-            Comando = new SqlCommand(query, AbrirBD());
+            Query = "SELECT TipoUsuario FROM dbo.Tab_Usuarios where NombreUsuario = '" + usuario + "';";
+            Comando = new SqlCommand(Query, AbrirBD());
             Reader = Comando.ExecuteReader();
             if (Reader.Read())
             {
@@ -65,6 +65,19 @@ namespace techsupp
             }
             catch (Exception) { MessageBox.Show("Ha ocurrido un error por favor intentelo de nuevo"); 
             }
+        }
+        public int EditarUsuario(string nombreDeUsuario, string password)
+        {
+            Query = @"exec editar_Contraseña @NombreUsuario, @Contraseña; ";
+            Comando = new SqlCommand(Query, AbrirBD());
+            // Parametros para la query...
+            Comando.Parameters.Add("@NombreUsuario", SqlDbType.VarChar).Value = nombreDeUsuario;
+            Comando.Parameters.Add("@Contraseña", SqlDbType.VarChar).Value = password;
+
+            int cantidadDeFilasAfectadas = Comando.ExecuteNonQuery();
+            CerrarBD();
+            
+            return cantidadDeFilasAfectadas;
         }
         public void EliminarUsuario(string usuarioActual)
         {

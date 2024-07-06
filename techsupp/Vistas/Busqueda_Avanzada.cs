@@ -147,7 +147,7 @@ namespace techsupp
                 No_AF = this.datagv1.CurrentRow.Cells[6].Value.ToString();
                 Comentario = this.datagv1.CurrentRow.Cells[7].Value.ToString();
 
-                Ver_Tickets mostrar = new Ver_Tickets(Codigo, Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario);
+                Ver_Tickets mostrar = new Ver_Tickets(Convert.ToInt32(Codigo), Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario);
                 mostrar.Show(this.datagv1);
             }
             catch (NullReferenceException)
@@ -168,7 +168,7 @@ namespace techsupp
                 No_AF = this.datagv1.CurrentRow.Cells[6].Value.ToString();
                 Comentario = this.datagv1.CurrentRow.Cells[7].Value.ToString();
 
-                Editar_Ticket mostrar = new Editar_Ticket(Codigo, Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario);
+                Editar_Ticket mostrar = new Editar_Ticket(Convert.ToInt32(Codigo), Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario);
                 // Esta Con esta linea llamamos el evento "FormClosed" antes de mostrar el formulario "Ticket".....
                 mostrar.FormClosed += new FormClosedEventHandler(Editar_ticket_FormClosed);
                 mostrar.ShowDialog();
@@ -181,12 +181,11 @@ namespace techsupp
         }
         public void EliminarTicket()
         {
-            tickets.EliminarTicket(Convert.ToInt32(this.datagv1.CurrentRow.Cells[0].Value));
+            new Tickets(Convert.ToInt32(this.datagv1.CurrentRow.Cells[0].Value)).EliminarTicket();
             Buscar();
         }
         public void Buscar()
         {
-            Conexion buscar = new Conexion();
             if (this.checkB_incluirfecha.Checked == true && this.checkB_Pendiente.Checked == false)
             {
                 switch (this.cb_categoria.Text)

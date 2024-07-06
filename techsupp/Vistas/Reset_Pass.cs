@@ -33,19 +33,10 @@ namespace techsupp
             {
                 if (this.tb_pass.Text == this.tb_confirm.Text)
                 {
-                    Conexion conexion = new Conexion();
-                    string pass = tb_pass.Text;
-                    string user = this.cb_Usuario.Text;
-                    string query = "EXEC editar_UnaContraseña @Usuario, @Pass";
+                    Usuario usuario = new Usuario();
+                    int cantidadDeFilasAfectadas = usuario.EditarUsuario(this.cb_Usuario.Text, this.tb_pass.Text);
 
-                    SqlCommand comando = new SqlCommand(query, conexion.AbrirBD());
-                    // Parametros para la query
-                    comando.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = user.ToString();
-                    comando.Parameters.Add("@Pass", SqlDbType.VarChar).Value = pass.ToString();
-
-                    int cant = comando.ExecuteNonQuery();
-                    conexion.CerrarBD();
-                    if (cant == 1) // Evalua si hubieron filas afectadas...
+                    if (cantidadDeFilasAfectadas == 1) // Evalua si hubieron filas afectadas...
                         {
                             MessageBox.Show("La contraseña se cambio correctamente","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             this.Hide();

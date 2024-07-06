@@ -24,7 +24,6 @@ namespace techsupp
         }
         private void Ver_Usuarios_Load(object sender, EventArgs e)
         {
-            Datos datos = new Datos();
             datos.ActualizarGrid(this.DATAGRID, "SELECT IdUsuario, NombreUsuario, NombreCompleto, TipoUsuario FROM dbo.Tab_Usuarios ORDER BY IdUsuario");
         }
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)

@@ -21,12 +21,10 @@ namespace techsupp
         public DataSet MiDataSet { get; set; }
         public SqlDataAdapter MiDataAdapter { get; set; }
 
-        public Conexion() // Este es un constructor sin parametros......
-        {
-            BaseDeDatos = new SqlConnection("Data Source=DESKTOP-48DV3FP\\SQLEXPRESS;Initial Catalog=soportetec;Integrated Security=True;");
-        }
         public SqlConnection AbrirBD() // Abre la BD 
         {
+            string connetionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            BaseDeDatos = new SqlConnection(connetionString.ToString());
             BaseDeDatos.Open();
             return BaseDeDatos; 
         }

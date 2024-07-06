@@ -197,7 +197,7 @@
     <EmbeddedResource Include="Vistas\Ver_Usuarios.resx">
       <DependentUpon>Ver_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="DSA.xsc">
       <DependentUpon>DSA.xsd</DependentUpon>
     </None>
