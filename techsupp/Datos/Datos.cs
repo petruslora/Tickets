@@ -25,6 +25,19 @@ namespace techsupp
             CerrarBD();
             return codigoTicket;
         }
+        public string GetNombreDelUsuario(string UsuarioActual) // Muestra el usuario que inicio sesion...
+        {
+            string UserFullName = "";
+            Query = "EXEC select_nombreCompletoUsuario '" + UsuarioActual + "';";
+            Comando = new SqlCommand(Query, AbrirBD());
+            Reader = Comando.ExecuteReader();
+            if (Reader.Read())
+            {
+                UserFullName = (Reader["NombreCompleto"].ToString());
+            }
+            CerrarBD();
+            return UserFullName;
+        }
         public int FilasMostradas(string query)
         {
             Comando = new SqlCommand(query, this.AbrirBD());
@@ -49,7 +62,6 @@ namespace techsupp
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
             dg.DataMember = "Reportes";
-
             CerrarBD();
         }
     }

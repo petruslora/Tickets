@@ -31,8 +31,8 @@ namespace techsupp
         private void appsoporte_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dSA.Reportes' table. You can move, or remove it, as needed.
-            this.reportesTableAdapter.Fill(this.dSA.Reportes);
-            GetNombreDelUsuario();
+            //this.reportesTableAdapter.Fill(this.dSA.Reportes);
+            this.lbl_usuarioactual.Text = datos.GetNombreDelUsuario(this.UsuarioActual);
             this.lbl_fecha.Text = this.dateTimePicker1.Text;
             this.dateTimePicker1.Hide();
             this.dateTimePicker2.Focus();
@@ -265,17 +265,6 @@ namespace techsupp
             }
             else
                 MessageBox.Show("Solo puedes eliminar los Tickets creados por ti...", "Error");
-        }
-        public void GetNombreDelUsuario() // Muestra el usuario que inicio sesion...
-        {
-            datos.Query = "EXEC select_nombreCompletoUsuario '" + this.UsuarioActual + "';";
-            datos.Comando = new SqlCommand(datos.Query, datos.AbrirBD());
-            datos.Reader = datos.Comando.ExecuteReader();
-            if (datos.Reader.Read())
-            {
-                this.lbl_usuarioactual.Text = (datos.Reader["NombreCompleto"].ToString());
-            }
-            datos.CerrarBD();
         }
         public void LoginNuevoUsuario()
         {
