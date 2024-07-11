@@ -32,19 +32,5 @@ namespace techsupp
         {   
             BaseDeDatos.Close();
         }
-        public void EjecutarQuery(string query)
-        {
-            try { 
-            Comando= new SqlCommand(query, AbrirBD());
-            int FilasAfectadas = Comando.ExecuteNonQuery();
-            CerrarBD();
-            if (FilasAfectadas == 0)
-            {
-                MessageBox.Show("Ha ocurrido un error :( ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            } catch (Exception) {
-                MessageBox.Show("Ha ocurrido un error por favor intentelo de nuevo");//"Ha ocurrido un error por favor intentelo de nuevo","Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
-            }
-        }
     }
 }
