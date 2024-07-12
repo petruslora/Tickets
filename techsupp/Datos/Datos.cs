@@ -25,7 +25,7 @@ namespace techsupp
             CerrarBD();
             return codigoTicket;
         }
-        public string GetNombreDelUsuario(string UsuarioActual) // Muestra el usuario que inicio sesion...
+        public string GetNombreDelUsuario(string UsuarioActual) // Muestra el nombre completo del usuario que inicio sesion...
         {
             string UserFullName = "";
             Query = "EXEC select_nombreCompletoUsuario '" + UsuarioActual + "';";
