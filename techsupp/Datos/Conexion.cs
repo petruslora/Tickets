@@ -23,6 +23,7 @@ namespace techsupp
 
         public SqlConnection AbrirBD() // Abre la BD 
         {
+	    //MyConnectionString desde el app.config
             string connetionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
             BaseDeDatos = new SqlConnection(connetionString.ToString());
             BaseDeDatos.Open();
