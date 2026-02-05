@@ -289,3 +289,26 @@ C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.exe.licenses
 C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.csproj.CoreCompileInputs.cache
 C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.exe
 C:\Users\dell\Desktop\techsupp\techsupp\obj\Debug\techsupp.pdb
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\bin\Debug\techsupp.exe.config
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\bin\Debug\techsupp.exe
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\bin\Debug\techsupp.pdb
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.csproj.AssemblyReference.cache
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.csproj.SuggestedBindingRedirects.cache
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Appsoporte.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Busqueda_Avanzada.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Editar_Usuario.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Editar_Ticket.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Login.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Login_Editar_Usuario.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Login_Nuevo_Usuario.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Nuevo_Usuario.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Properties.Resources.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Reset_Pass.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Crear_Ticket.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Ver_Tickets.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.Ver_Usuarios.resources
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.exe.licenses
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.exe
+C:\Users\dell\Desktop\Cursos platzi\techsupp\techsupp\obj\Debug\techsupp.pdb

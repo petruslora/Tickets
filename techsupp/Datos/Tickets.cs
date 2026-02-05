@@ -66,10 +66,10 @@ namespace techsupp
                 MessageBox.Show("Ha ocurrido un error por favor intentelo de nuevo");//"Ha ocurrido un error por favor intentelo de nuevo","Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
             }
         }
-        public void EditarTicket()
+        public void EditarTicket(string CurrentUser)
         {
             {
-                Query = "EXEC editarTicket @Tecnico, @Estado, @Departamento, @Problemas, @Noaf, @Comentario,@Ticket";
+                Query = "EXEC editarTicket @Tecnico, @Estado, @Departamento, @Problemas, @Noaf, @Comentario,@Ticket, @CurrentUser";
                 Comando = new SqlCommand(Query, AbrirBD());
                 Comando.Parameters.Add("@Tecnico", SqlDbType.VarChar).Value = Tecnico;
                 Comando.Parameters.Add("@Estado", SqlDbType.VarChar).Value = Estado;
@@ -78,6 +78,7 @@ namespace techsupp
                 Comando.Parameters.Add("@Noaf", SqlDbType.VarChar).Value = NumeroActivoFijo;
                 Comando.Parameters.Add("@Comentario", SqlDbType.VarChar).Value = Comentario;
                 Comando.Parameters.Add("@Ticket", SqlDbType.Int).Value = Codigo;
+                Comando.Parameters.Add("@CurrentUser", SqlDbType.VarChar).Value = CurrentUser;
                 try
                 {
                     int FilasAfectadas = Comando.ExecuteNonQuery();

@@ -27,9 +27,14 @@ namespace techsupp
             DataGridViewRow row = this.datagv1.RowTemplate;
             row.Height = 24;
             ActualizarThisDataGrid();
+            datagv1.Dock = DockStyle.None;
+            datagv1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            datagv1.Top = 160;        // posición vertical fija
         }
         private void appsoporte_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'soportetecDataSet.Ticket' table. You can move, or remove it, as needed.
+            this.ticketTableAdapter.Fill(this.soportetecDataSet.Ticket);
             // TODO: This line of code loads data into the 'dSA.Reportes' table. You can move, or remove it, as needed.
             //this.reportesTableAdapter.Fill(this.dSA.Reportes);
             this.lbl_usuarioactual.Text = datos.GetNombreDelUsuario(this.UsuarioActual);
@@ -45,6 +50,7 @@ namespace techsupp
             {
                 this.editarToolStripMenuItem2.Enabled = false;
             }
+            
         }
         public void Ticket_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -53,7 +59,7 @@ namespace techsupp
         }
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
-            new Busqueda_Avanzada(this.UsuarioActual).Show();
+            new Busqueda_Avanzada(this.dateTimePicker2.Text, this.dateTimePicker3.Text, this.checkB_incluirfecha, this.checkB_Pendiente, this.cb_categoria.Text, this.tb_Buscar.Text, this.UsuarioActual).Show();
         }
         private void btn_salir_Click(object sender, EventArgs e)
         {
@@ -143,7 +149,7 @@ namespace techsupp
         }
         private void filtroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Busqueda_Avanzada(this.UsuarioActual).Show();
+            new Busqueda_Avanzada(this.dateTimePicker2.Text, this.dateTimePicker3.Text, this.checkB_incluirfecha, this.checkB_Pendiente, this.cb_categoria.Text, this.tb_Buscar.Text, this.UsuarioActual).Show();
         }
         private void appsoporte_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -155,7 +161,7 @@ namespace techsupp
         }
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            new Busqueda_Avanzada(this.dateTimePicker2.Text, this.dateTimePicker3.Text, this.checkB_incluirfecha, this.checkB_Pendiente, this.cb_categoria.Text, this.tb_Buscar.Text).Show();
+            new Busqueda_Avanzada(this.dateTimePicker2.Text, this.dateTimePicker3.Text, this.checkB_incluirfecha, this.checkB_Pendiente, this.cb_categoria.Text, this.tb_Buscar.Text, this.UsuarioActual).Show();
         }
         private void cb_categoria_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -168,15 +174,15 @@ namespace techsupp
         private void hoyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DateTime thisDay = DateTime.Today;
-            datos.ActualizarGrid(this.datagv1, "SELECT * FROM dbo.Reportes WHERE Fecha = '" + thisDay.ToString("d") + "' ORDER BY Codigo DESC");
-            this.lbl_Filas.Text = datos.FilasMostradas("SELECT * FROM dbo.Reportes WHERE Fecha = '" + thisDay.ToString("d") + "' ORDER BY Codigo DESC").ToString() + " Filas";
+            datos.ActualizarGrid(this.datagv1, "SELECT * FROM dbo.Ticket WHERE Fecha = '" + thisDay.ToString("d") + "' ORDER BY Codigo DESC");
+            this.lbl_Filas.Text = datos.FilasMostradas("SELECT * FROM dbo.Ticket WHERE Fecha = '" + thisDay.ToString("d") + "' ORDER BY Codigo DESC").ToString() + " Filas";
             // Muestra la cantidad de filas seleccionadas...
             int i = Convert.ToInt32(this.datagv1.SelectedRows.Count);
             this.label2.Text = i.ToString() + " Seleccionadas";
         }
         private void TicketPendiente() // Avisa al tecnico los ticket que no se han cerrado cuando inicia sesion...
         {
-            int i = Convert.ToInt32(datos.FilasMostradas("SELECT * FROM dbo.Reportes WHERE Estado = 'abierto' or Estado = 'en espera';"));
+            int i = Convert.ToInt32(datos.FilasMostradas("SELECT * FROM dbo.Ticket WHERE Estado = 'abierto' or Estado = 'en espera';"));
             if (i > 0)
             {
                 MessageBox.Show("Hola, hay " + i + " Ticket que no se han cerrado. ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -185,9 +191,9 @@ namespace techsupp
         public void ActualizarThisDataGrid()
         {
             DateTime thisDay = DateTime.Today;
-            datos.ActualizarGrid(this.datagv1, "SELECT * FROM dbo.Reportes ORDER BY Codigo DESC");
+            datos.ActualizarGrid(this.datagv1, "SELECT * FROM dbo.Ticket ORDER BY Codigo DESC");
             // Actualiza la cantidad de filas mostradas...
-            this.lbl_Filas.Text = datos.FilasMostradas("SELECT * FROM dbo.Reportes ORDER BY Codigo DESC;").ToString() + " Filas";
+            this.lbl_Filas.Text = datos.FilasMostradas("SELECT * FROM dbo.Ticket ORDER BY Codigo DESC;").ToString() + " Filas";
             // Muestra la cantidad de filas seleccionadas...
             int i = Convert.ToInt32(this.datagv1.SelectedRows.Count);
             this.label2.Text = i.ToString() + " Seleccionadas";
@@ -201,6 +207,12 @@ namespace techsupp
             this.checkB_incluirfecha.Checked = false;
             this.checkB_Pendiente.Checked = false;
         }
+
+        private void datagv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void editarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Reset_Pass reset_Pass = new Reset_Pass(this.UsuarioActual);
@@ -246,7 +258,7 @@ namespace techsupp
                 No_AF = this.datagv1.CurrentRow.Cells[6].Value.ToString();
                 Comentario = this.datagv1.CurrentRow.Cells[7].Value.ToString();
 
-                Editar_Ticket mostrar = new Editar_Ticket(Codigo, Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario);
+                Editar_Ticket mostrar = new Editar_Ticket(Codigo, Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario, this.UsuarioActual);
                 // Esta Con esta linea llamamos el evento "FormClosed" antes de mostrar el formulario "Ticket".....
                 mostrar.FormClosed += new FormClosedEventHandler(Ticket_FormClosed);
                 mostrar.ShowDialog();

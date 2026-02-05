@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Busqueda_Avanzada));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Busqueda_Avanzada));
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_Filas = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -50,10 +50,12 @@
             this.checkB_incluirfecha = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkB_Pendiente = new System.Windows.Forms.CheckBox();
+            this.btn_quitar_filtro = new System.Windows.Forms.Button();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.datagv1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,15 +68,13 @@
             this.reportesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dSA = new techsupp.DSA();
             this.reportesTableAdapter = new techsupp.DSATableAdapters.ReportesTableAdapter();
-            this.btn_quitar_filtro = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.reportesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,27 +119,27 @@
             // crearTicketToolStripMenuItem
             // 
             this.crearTicketToolStripMenuItem.Name = "crearTicketToolStripMenuItem";
-            this.crearTicketToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.crearTicketToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.crearTicketToolStripMenuItem.Text = "Crear Ticket ";
             this.crearTicketToolStripMenuItem.Click += new System.EventHandler(this.crearTicketToolStripMenuItem_Click);
             // 
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.verToolStripMenuItem.Text = "Ver Ticket";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.actualizarToolStripMenuItem.Text = "&Actualizar";
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.editarToolStripMenuItem.Text = "&Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
@@ -152,14 +152,14 @@
             // 
             this.holaToolStripMenuItem.Enabled = false;
             this.holaToolStripMenuItem.Name = "holaToolStripMenuItem";
-            this.holaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.holaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.holaToolStripMenuItem.Text = "DSA";
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
             this.eliminarToolStripMenuItem1.ShowShortcutKeys = false;
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.eliminarToolStripMenuItem1.Text = "E&liminar";
             this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
@@ -256,6 +256,18 @@
             this.checkB_Pendiente.Text = "Pendiente";
             this.checkB_Pendiente.UseVisualStyleBackColor = true;
             // 
+            // btn_quitar_filtro
+            // 
+            this.btn_quitar_filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_quitar_filtro.ForeColor = System.Drawing.Color.Red;
+            this.btn_quitar_filtro.Image = ((System.Drawing.Image)(resources.GetObject("btn_quitar_filtro.Image")));
+            this.btn_quitar_filtro.Location = new System.Drawing.Point(708, 24);
+            this.btn_quitar_filtro.Name = "btn_quitar_filtro";
+            this.btn_quitar_filtro.Size = new System.Drawing.Size(35, 23);
+            this.btn_quitar_filtro.TabIndex = 7;
+            this.btn_quitar_filtro.UseVisualStyleBackColor = true;
+            this.btn_quitar_filtro.Click += new System.EventHandler(this.btn_quitar_filtro_Click_1);
+            // 
             // btn_Buscar
             // 
             this.btn_Buscar.Location = new System.Drawing.Point(745, 24);
@@ -297,6 +309,16 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(94, 20);
             this.dateTimePicker1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::techsupp.Properties.Resources.buscar_buscar_318_114081;
+            this.pictureBox1.Location = new System.Drawing.Point(686, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(17, 14);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // datagv1
             // 
@@ -432,28 +454,6 @@
             // 
             this.reportesTableAdapter.ClearBeforeFill = true;
             // 
-            // btn_quitar_filtro
-            // 
-            this.btn_quitar_filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_quitar_filtro.ForeColor = System.Drawing.Color.Red;
-            this.btn_quitar_filtro.Image = ((System.Drawing.Image)(resources.GetObject("btn_quitar_filtro.Image")));
-            this.btn_quitar_filtro.Location = new System.Drawing.Point(708, 24);
-            this.btn_quitar_filtro.Name = "btn_quitar_filtro";
-            this.btn_quitar_filtro.Size = new System.Drawing.Size(35, 23);
-            this.btn_quitar_filtro.TabIndex = 7;
-            this.btn_quitar_filtro.UseVisualStyleBackColor = true;
-            this.btn_quitar_filtro.Click += new System.EventHandler(this.btn_quitar_filtro_Click_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::techsupp.Properties.Resources.buscar_buscar_318_114081;
-            this.pictureBox1.Location = new System.Drawing.Point(686, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(17, 14);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // reportesBindingSource
             // 
             this.reportesBindingSource.DataMember = "Reportes";
@@ -478,10 +478,10 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

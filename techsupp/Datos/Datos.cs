@@ -13,7 +13,7 @@ namespace techsupp
     {
         public int GetCodigoTicket()
         {
-            Query = "SELECT Codigo FROM dbo.Reportes ORDER BY Codigo DESC;";
+            Query = "SELECT Codigo FROM dbo.Ticket ORDER BY Codigo DESC;";
             Comando = new SqlCommand(Query, AbrirBD());
             Reader = Comando.ExecuteReader();
             int codigoUltimoTicket = 0;
@@ -64,7 +64,8 @@ namespace techsupp
             }
             catch (Exception)
             {
-                MessageBox.Show("Ha ocurrido un error por favor intentelo de nuevo");//"Ha ocurrido un error por favor intentelo de nuevo","Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ha ocurrido un error por favor intentelo de nuevo");
+                //"Ha ocurrido un error por favor intentelo de nuevo","Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
             }
         }
         public void ActualizarGrid(DataGridView dg, String Query)
@@ -75,10 +76,10 @@ namespace techsupp
             //Crear Adaptador de datos
             MiDataAdapter = new SqlDataAdapter(Query, BaseDeDatos);
             //LLenar el DataSet
-            MiDataAdapter.Fill(MiDataSet, "Reportes");
+            MiDataAdapter.Fill(MiDataSet, "Ticket");
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
-            dg.DataMember = "Reportes";
+            dg.DataMember = "Ticket";
             CerrarBD();
         }
     }

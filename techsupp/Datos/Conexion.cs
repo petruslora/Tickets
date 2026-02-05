@@ -15,6 +15,7 @@ namespace techsupp
     public class Conexion
     {
         public SqlDataReader Reader { get; set; }
+        //Declaramos una propiedad publica de tipo SqlConnection para instanciarla mas adelante...
         public SqlConnection BaseDeDatos { get; set; }
         public SqlCommand Comando { get; set; }
         public string Query { get; set; }
@@ -23,8 +24,9 @@ namespace techsupp
 
         public SqlConnection AbrirBD() // Abre la BD 
         {
-	    //MyConnectionString desde el app.config
+	        //MyConnectionString desde el app.config
             string connetionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            // Inicializamos nuestra variable "BaseDeDatos" y asignamos el connectionString...
             BaseDeDatos = new SqlConnection(connetionString.ToString());
             BaseDeDatos.Open();
             return BaseDeDatos; 

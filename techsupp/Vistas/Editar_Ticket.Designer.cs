@@ -58,12 +58,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(24, 48);
+            this.label1.Location = new System.Drawing.Point(25, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(464, 13);
+            this.label1.Size = new System.Drawing.Size(475, 13);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Asegurese de estar editando el ticket correcto. Los campos marcados con * no se p" +
-    "ueden editar.";
+            this.label1.Text = "Los campos marcados con * no se pueden editar. No se permite editar un Ticket si " +
+    "ya esta cerrado.";
             // 
             // lbl_editar
             // 

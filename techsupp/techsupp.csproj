@@ -53,6 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="soportetecDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>soportetecDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Appsoporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +212,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="soportetecDataSet.xsc">
+      <DependentUpon>soportetecDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="soportetecDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>soportetecDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="soportetecDataSet.xss">
+      <DependentUpon>soportetecDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1462920575_user_male2.png" />

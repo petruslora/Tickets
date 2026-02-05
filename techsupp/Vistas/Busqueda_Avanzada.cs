@@ -12,12 +12,12 @@ namespace techsupp
 {
     public partial class Busqueda_Avanzada : Form
     {
-        Usuario usuario = new Usuario();    
-        private string ActiveUser;
+        Usuario usuario = new Usuario();  
+        string ActiveUser;
         private Datos manipularDatos = new Datos(); 
         private Boolean Admin;
         private string Codigo, Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario;
-        public Busqueda_Avanzada(string date1, string date2,CheckBox incluirFecha, CheckBox pendiente, string categoria, string tb_buscar)
+        public Busqueda_Avanzada(string date1, string date2,CheckBox incluirFecha, CheckBox pendiente, string categoria, string tb_buscar, string user)
         {
             InitializeComponent();
             this.dateTimePicker1.Text = date1;
@@ -25,12 +25,8 @@ namespace techsupp
             this.checkB_Pendiente.Checked = pendiente.Checked;
             this.checkB_incluirfecha.Checked = incluirFecha.Checked;
             this.cb_categoria.Text = categoria;
-            this.tb_Buscar.Text = tb_buscar; 
-        }
-        public Busqueda_Avanzada(string user)
-        {
-            InitializeComponent();
-            this.ActiveUser = user;                
+            this.tb_Buscar.Text = tb_buscar;
+            this.ActiveUser = user;
         }
         public Boolean TipoUsuario() // Este metodo evalua si el tipo de usuario que inicio sesion, si es admin o no.
         {
@@ -49,8 +45,8 @@ namespace techsupp
         }
         private void Busqueda_avanzada_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSA.Reportes' table. You can move, or remove it, as needed.
-            this.reportesTableAdapter.Fill(this.dSA.Reportes);
+            // TODO: This line of code loads data into the 'dSA.Ticket' table. You can move, or remove it, as needed.
+           //this.TicketTableAdapter.Fill(this.dSA.Ticket);
             this.dateTimePicker1.Focus();
             Buscar();
             
@@ -155,8 +151,8 @@ namespace techsupp
                 No_AF = this.datagv1.CurrentRow.Cells[6].Value.ToString();
                 Comentario = this.datagv1.CurrentRow.Cells[7].Value.ToString();
 
-                Editar_Ticket mostrar = new Editar_Ticket(Convert.ToInt32(Codigo), Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario);
-                // Esta Con esta linea llamamos el evento "FormClosed" antes de mostrar el formulario "Ticket".....
+                Editar_Ticket mostrar = new Editar_Ticket(Convert.ToInt32(Codigo), Fecha, Tecnico, Estado, Departamento, ProblemasCon, No_AF, Comentario, this.ActiveUser);
+                //Esta Con esta linea llamamos el evento "FormClosed" antes de mostrar el formulario "Ticket".....
                 mostrar.FormClosed += new FormClosedEventHandler(Editar_ticket_FormClosed);
                 mostrar.ShowDialog();
 
@@ -178,49 +174,49 @@ namespace techsupp
                 switch (this.cb_categoria.Text)
                 {
                     case "No. Ticket":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                     case "Tecnico":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                     case "Departamento":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                     case "Usuario":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                     case "Problemas con":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     case "No a/f":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     default:
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' ORDER BY Codigo DESC;");
                         // Muestra la cantidad de filas que aparecen con la misma query de actualizar...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                 } // Fin switch.....
             }
@@ -229,46 +225,46 @@ namespace techsupp
                 switch (this.cb_categoria.Text)
                 {
                     case "No. Ticket":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                     case "Tecnico":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
 
                     case "Departamento":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     case "Usuario":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     case "Problemas con":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     case "No a/f":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     default:
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket ORDER BY Codigo DESC;");
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                 } // Fin del segundo switch.....
@@ -279,49 +275,49 @@ namespace techsupp
                 switch (this.cb_categoria.Text)
                 {
                     case "No. Ticket":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                     case "Tecnico":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                     case "Departamento":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                     case "Usuario":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                     case "Problemas con":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     case "No a/f":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     default:
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE Estado = 'Abierto' or Estado = 'En espera' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE Estado = 'Abierto' or Estado = 'En espera' ORDER BY Codigo DESC;");
                         // Muestra la cantidad de filas que aparecen con la misma query de actualizar...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE Estado = 'Abierto' or Estado = 'En espera' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE Estado = 'Abierto' or Estado = 'En espera' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                 } // Fin switch.....
 
@@ -331,49 +327,49 @@ namespace techsupp
                 switch (this.cb_categoria.Text)
                 {
                     case "No. Ticket":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Codigo LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                     case "Tecnico":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Tecnico LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
 
                         break;
                     case "Departamento":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Departamento LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                     case "Usuario":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND Usuario LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                     case "Problemas con":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [Problemas con] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     case "No a/f":
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;");
 
                         // Actualiza el numero de filas que muestra el datagrid...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') AND [No a/f] LIKE '" + this.tb_Buscar.Text + "%' ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
 
                     default:
-                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') ORDER BY Codigo DESC;");
+                        manipularDatos.ActualizarGrid(this.datagv1, "SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') ORDER BY Codigo DESC;");
                         // Muestra la cantidad de filas que aparecen con la misma query de actualizar...
-                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Reportes WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') ORDER BY Codigo DESC;").ToString() + " Filas";
+                        this.lbl_Filas.Text = manipularDatos.FilasMostradas("SELECT * FROM DBO.Ticket WHERE (FECHA >='" + this.dateTimePicker1.Text + "' AND FECHA <= '" + this.dateTimePicker2.Text + "') AND (Estado = 'Abierto' or Estado = 'En espera') ORDER BY Codigo DESC;").ToString() + " Filas";
                         break;
                 } // Fin switch.....
             }  // Fin del if.....

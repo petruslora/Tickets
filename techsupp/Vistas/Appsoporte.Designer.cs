@@ -87,14 +87,9 @@
             this.btn_Editar = new System.Windows.Forms.Button();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datagv1 = new System.Windows.Forms.DataGridView();
-            this.codigoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tecnicoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departamentoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.problemasConDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noafDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.soportetecDataSet = new techsupp.soportetecDataSet();
+            this.ticketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSA = new techsupp.DSA();
             this.codigoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,13 +109,31 @@
             this.reportesTableAdapter = new techsupp.DSATableAdapters.ReportesTableAdapter();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_Filtro = new System.Windows.Forms.Button();
+            this.soportetecDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ticketTableAdapter = new techsupp.soportetecDataSetTableAdapters.TicketTableAdapter();
+            this.ticketBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ticketBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tecnicoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamentoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.problemasConDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noafDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soportetecDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soportetecDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -389,7 +402,7 @@
             this.groupBox1.Controls.Add(this.tb_Buscar);
             this.groupBox1.Location = new System.Drawing.Point(13, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1045, 66);
+            this.groupBox1.Size = new System.Drawing.Size(1040, 66);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
@@ -530,7 +543,7 @@
             this.lbl_Filas.AutoSize = true;
             this.lbl_Filas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Filas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Filas.Location = new System.Drawing.Point(51, 530);
+            this.lbl_Filas.Location = new System.Drawing.Point(51, 544);
             this.lbl_Filas.Name = "lbl_Filas";
             this.lbl_Filas.Size = new System.Drawing.Size(33, 15);
             this.lbl_Filas.TabIndex = 31;
@@ -542,7 +555,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(113, 530);
+            this.label2.Location = new System.Drawing.Point(113, 544);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 15);
             this.label2.TabIndex = 32;
@@ -617,10 +630,9 @@
             // 
             this.datagv1.AllowUserToAddRows = false;
             this.datagv1.AllowUserToDeleteRows = false;
-            this.datagv1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datagv1.AllowUserToOrderColumns = true;
             this.datagv1.AutoGenerateColumns = false;
+            this.datagv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagv1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.datagv1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datagv1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -635,7 +647,7 @@
             this.datagv1.ColumnHeadersHeight = 30;
             this.datagv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoDataGridViewTextBoxColumn3,
+            this.Column1,
             this.fechaDataGridViewTextBoxColumn2,
             this.tecnicoDataGridViewTextBoxColumn2,
             this.estadoDataGridViewTextBoxColumn2,
@@ -644,7 +656,7 @@
             this.noafDataGridViewTextBoxColumn,
             this.comentarioDataGridViewTextBoxColumn});
             this.datagv1.ContextMenuStrip = this.contextMenuStrip1;
-            this.datagv1.DataSource = this.reportesBindingSource;
+            this.datagv1.DataSource = this.ticketBindingSource3;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -654,7 +666,6 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datagv1.DefaultCellStyle = dataGridViewCellStyle3;
             this.datagv1.Location = new System.Drawing.Point(13, 162);
-            this.datagv1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.datagv1.Name = "datagv1";
             this.datagv1.ReadOnly = true;
             this.datagv1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -668,71 +679,27 @@
             this.datagv1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.datagv1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.datagv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagv1.Size = new System.Drawing.Size(1045, 352);
+            this.datagv1.Size = new System.Drawing.Size(1045, 370);
             this.datagv1.TabIndex = 10;
             this.datagv1.TabStop = false;
+            this.datagv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagv1_CellContentClick);
             this.datagv1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.datagv1_CellMouseDoubleClick);
             this.datagv1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.datagv1_MouseClick);
             // 
-            // codigoDataGridViewTextBoxColumn3
+            // ticketBindingSource3
             // 
-            this.codigoDataGridViewTextBoxColumn3.DataPropertyName = "Codigo";
-            this.codigoDataGridViewTextBoxColumn3.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn3.Name = "codigoDataGridViewTextBoxColumn3";
-            this.codigoDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.codigoDataGridViewTextBoxColumn3.Width = 80;
+            this.ticketBindingSource3.DataMember = "Ticket";
+            this.ticketBindingSource3.DataSource = this.soportetecDataSet;
             // 
-            // fechaDataGridViewTextBoxColumn2
+            // soportetecDataSet
             // 
-            this.fechaDataGridViewTextBoxColumn2.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn2.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn2.Name = "fechaDataGridViewTextBoxColumn2";
-            this.fechaDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.soportetecDataSet.DataSetName = "soportetecDataSet";
+            this.soportetecDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tecnicoDataGridViewTextBoxColumn2
+            // ticketBindingSource
             // 
-            this.tecnicoDataGridViewTextBoxColumn2.DataPropertyName = "Tecnico";
-            this.tecnicoDataGridViewTextBoxColumn2.HeaderText = "Tecnico";
-            this.tecnicoDataGridViewTextBoxColumn2.Name = "tecnicoDataGridViewTextBoxColumn2";
-            this.tecnicoDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn2
-            // 
-            this.estadoDataGridViewTextBoxColumn2.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn2.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn2.Name = "estadoDataGridViewTextBoxColumn2";
-            this.estadoDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // departamentoDataGridViewTextBoxColumn2
-            // 
-            this.departamentoDataGridViewTextBoxColumn2.DataPropertyName = "Departamento";
-            this.departamentoDataGridViewTextBoxColumn2.HeaderText = "Departamento";
-            this.departamentoDataGridViewTextBoxColumn2.Name = "departamentoDataGridViewTextBoxColumn2";
-            this.departamentoDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.departamentoDataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // problemasConDataGridViewTextBoxColumn2
-            // 
-            this.problemasConDataGridViewTextBoxColumn2.DataPropertyName = "Problemas con";
-            this.problemasConDataGridViewTextBoxColumn2.HeaderText = "Problemas con";
-            this.problemasConDataGridViewTextBoxColumn2.Name = "problemasConDataGridViewTextBoxColumn2";
-            this.problemasConDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.problemasConDataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // noafDataGridViewTextBoxColumn
-            // 
-            this.noafDataGridViewTextBoxColumn.DataPropertyName = "Noaf";
-            this.noafDataGridViewTextBoxColumn.HeaderText = "Noaf";
-            this.noafDataGridViewTextBoxColumn.Name = "noafDataGridViewTextBoxColumn";
-            this.noafDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // comentarioDataGridViewTextBoxColumn
-            // 
-            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "Comentario";
-            this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
-            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
-            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.comentarioDataGridViewTextBoxColumn.Width = 300;
+            this.ticketBindingSource.DataMember = "Ticket";
+            this.ticketBindingSource.DataSource = this.soportetecDataSet;
             // 
             // reportesBindingSource
             // 
@@ -860,6 +827,102 @@
             this.btn_Filtro.UseVisualStyleBackColor = true;
             this.btn_Filtro.Click += new System.EventHandler(this.btn_Actualizar_Click);
             // 
+            // soportetecDataSetBindingSource
+            // 
+            this.soportetecDataSetBindingSource.DataSource = this.soportetecDataSet;
+            this.soportetecDataSetBindingSource.Position = 0;
+            // 
+            // ticketTableAdapter
+            // 
+            this.ticketTableAdapter.ClearBeforeFill = true;
+            // 
+            // ticketBindingSource1
+            // 
+            this.ticketBindingSource1.DataMember = "Ticket";
+            this.ticketBindingSource1.DataSource = this.soportetecDataSet;
+            // 
+            // ticketBindingSource2
+            // 
+            this.ticketBindingSource2.DataMember = "Ticket";
+            this.ticketBindingSource2.DataSource = this.soportetecDataSetBindingSource;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column1.DataPropertyName = "Codigo";
+            this.Column1.FillWeight = 0.008305059F;
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 70;
+            // 
+            // fechaDataGridViewTextBoxColumn2
+            // 
+            this.fechaDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fechaDataGridViewTextBoxColumn2.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn2.FillWeight = 0.1209147F;
+            this.fechaDataGridViewTextBoxColumn2.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn2.Name = "fechaDataGridViewTextBoxColumn2";
+            this.fechaDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // tecnicoDataGridViewTextBoxColumn2
+            // 
+            this.tecnicoDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.tecnicoDataGridViewTextBoxColumn2.DataPropertyName = "Tecnico";
+            this.tecnicoDataGridViewTextBoxColumn2.FillWeight = 0.2433499F;
+            this.tecnicoDataGridViewTextBoxColumn2.HeaderText = "Tecnico";
+            this.tecnicoDataGridViewTextBoxColumn2.Name = "tecnicoDataGridViewTextBoxColumn2";
+            this.tecnicoDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.tecnicoDataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // estadoDataGridViewTextBoxColumn2
+            // 
+            this.estadoDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.estadoDataGridViewTextBoxColumn2.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn2.FillWeight = 300.8581F;
+            this.estadoDataGridViewTextBoxColumn2.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn2.Name = "estadoDataGridViewTextBoxColumn2";
+            this.estadoDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn2.Width = 120;
+            // 
+            // departamentoDataGridViewTextBoxColumn2
+            // 
+            this.departamentoDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.departamentoDataGridViewTextBoxColumn2.DataPropertyName = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn2.FillWeight = 3.086492F;
+            this.departamentoDataGridViewTextBoxColumn2.HeaderText = "Departamento";
+            this.departamentoDataGridViewTextBoxColumn2.Name = "departamentoDataGridViewTextBoxColumn2";
+            this.departamentoDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.departamentoDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // problemasConDataGridViewTextBoxColumn2
+            // 
+            this.problemasConDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.problemasConDataGridViewTextBoxColumn2.DataPropertyName = "Problemas con";
+            this.problemasConDataGridViewTextBoxColumn2.FillWeight = 12.93013F;
+            this.problemasConDataGridViewTextBoxColumn2.HeaderText = "Problemas con";
+            this.problemasConDataGridViewTextBoxColumn2.Name = "problemasConDataGridViewTextBoxColumn2";
+            this.problemasConDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.problemasConDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // noafDataGridViewTextBoxColumn
+            // 
+            this.noafDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.noafDataGridViewTextBoxColumn.DataPropertyName = "Noaf";
+            this.noafDataGridViewTextBoxColumn.FillWeight = 17.50455F;
+            this.noafDataGridViewTextBoxColumn.HeaderText = "Noaf";
+            this.noafDataGridViewTextBoxColumn.Name = "noafDataGridViewTextBoxColumn";
+            this.noafDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // comentarioDataGridViewTextBoxColumn
+            // 
+            this.comentarioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.FillWeight = 159.1569F;
+            this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
+            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Appsoporte
             // 
             this.AcceptButton = this.btn_nuevo;
@@ -882,7 +945,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1037, 572);
+            this.MinimumSize = new System.Drawing.Size(1037, 600);
             this.Name = "Appsoporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  App Soporte";
@@ -896,8 +959,14 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soportetecDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soportetecDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -976,7 +1045,15 @@
         private DSA dSA;
         private System.Windows.Forms.BindingSource reportesBindingSource;
         private DSATableAdapters.ReportesTableAdapter reportesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
+        private soportetecDataSet soportetecDataSet;
+        private System.Windows.Forms.BindingSource soportetecDataSetBindingSource;
+        private System.Windows.Forms.BindingSource ticketBindingSource;
+        private soportetecDataSetTableAdapters.TicketTableAdapter ticketTableAdapter;
+        private System.Windows.Forms.BindingSource ticketBindingSource1;
+        private System.Windows.Forms.BindingSource ticketBindingSource3;
+        private System.Windows.Forms.BindingSource ticketBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tecnicoDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn2;
@@ -984,6 +1061,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn problemasConDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn noafDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn comentarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem2;
     }
 }

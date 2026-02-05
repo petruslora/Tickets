@@ -15,10 +15,11 @@ namespace techsupp
     {
         // Atributos...
         Tickets tickets = new Tickets();
+        string CurrentUser;
         Datos datos = new Datos();
         int codigoTicket;
 
-        public Editar_Ticket(int ticket, string fecha, string tecnico, string estado, string departameto, string problemascon, string noaf, string comentario)
+        public Editar_Ticket(int ticket, string fecha, string tecnico, string estado, string departameto, string problemascon, string noaf, string comentario, string currentUser)
         {
             
             tickets.Codigo = ticket;
@@ -29,6 +30,7 @@ namespace techsupp
             tickets.ProblemasCon = problemascon;
             tickets.NumeroActivoFijo = noaf;
             tickets.Comentario = comentario;
+            CurrentUser = currentUser;
             InitializeComponent();
         }
         private void Editar_ticket_Load(object sender, EventArgs e)
@@ -40,7 +42,11 @@ namespace techsupp
             this.tb_Departamento.Text = tickets.Departamento;
             this.cb_Problemascon.Text = tickets.ProblemasCon;
             this.tb_noaf.Text = tickets.NumeroActivoFijo;
-            this.tb_comentario.Text = tickets.Comentario;          
+            this.tb_comentario.Text = tickets.Comentario;
+            if (this.cb_Estado.Text == "Cerrado")
+            {
+                this.btn_actualizar.Enabled = false;
+            }
         }
         private void btn_salir_Click(object sender, EventArgs e)
         {
@@ -70,7 +76,7 @@ namespace techsupp
             }
             else
             {
-               new Tickets(tickets.Codigo, tickets.Tecnico, this.cb_Estado.Text, this.tb_Departamento.Text, this.cb_Problemascon.Text, this.tb_noaf.Text, this.tb_comentario.Text).EditarTicket();
+               new Tickets(tickets.Codigo, tickets.Tecnico, this.cb_Estado.Text, this.tb_Departamento.Text, this.cb_Problemascon.Text, this.tb_noaf.Text, this.tb_comentario.Text).EditarTicket(this.CurrentUser);
                 this.Close();
             }
         }
